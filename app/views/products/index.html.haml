@@ -1,0 +1,22 @@
+-
+%h2 All Products
+
+%table#products
+  %thead
+    %tr
+      %th Product ID
+      %th Product Name
+      %th Product Price
+      %th Product Quantity
+      %th Related Products
+      %th More Info
+  %tbody
+    - @products.each do |product|
+      %tr
+        %td= product.id
+        %td= product.product_name
+        %td= product.product_price
+        %td= product.product_quantity
+        %td= product.related_products
+        %td= link_to "More about #{product.product_name}", product_path(product)
+        
