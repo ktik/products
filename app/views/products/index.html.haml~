@@ -20,7 +20,7 @@
         %td= product.related_products
         %td= link_to "More about #{product.product_name}", product_path(product)
         
-= form_tag products_update_path, :multipart => true do
+= form_tag '/upload', :multipart => true do
 
   = label :product, :file, 'Choose a CSV file to upload'
   

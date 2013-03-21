@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130320141308) do
+ActiveRecord::Schema.define(:version => 20130321123054) do
 
   create_table "products", :force => true do |t|
     t.string  "product_name"
-    t.decimal "product_price"
+    t.string  "product_price"
     t.integer "product_quantity"
     t.string  "related_products"
   end

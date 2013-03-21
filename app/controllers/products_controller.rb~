@@ -9,12 +9,6 @@ class ProductsController < ApplicationController
   def show
     id = params[:id]
     @product = Product.find(id)
-    rel_prod = @product.related_products
-    id_list = rel_prod.split(%r{,\s*})
-    @product_list = Array.new
-    id_list.each do |prod_id|
-      @product_list << Product.find(Integer(prod_id))
-    end
   end
   
   def update
