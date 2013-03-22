@@ -19,7 +19,8 @@
         %td= product.product_quantity
         %td= product.related_products
         %td= link_to "More about #{product.product_name}", product_path(product)
-        
+%br
+%br        
 = form_tag products_update_path, :multipart => true do
 
   = label :product, :file, 'Choose a CSV file to upload'

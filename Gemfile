@@ -36,4 +36,9 @@ group :development, :test do
   gem 'ruby-debug19'
   gem 'sqlite3'
 end
+
+group :test do
+  gem 'rspec-rails'
+end
+
   

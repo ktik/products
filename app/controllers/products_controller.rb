@@ -25,15 +25,20 @@ class ProductsController < ApplicationController
       #arr = CSV.parse_line(row)
       if row[1] and row[2] and row[3] and row[4] 
         Product.create!(:product_name => row[1], :product_price => row[2], :product_quantity => row[3], :related_products => row[4])
+        flash[:notice] = 'CSV data uploaded successfully'
+      else
+        raise CSV::MalformedCSVError
       end
     end
     rescue CSV::MalformedCSVError
+      flash[:notice] = 'CSV file was malformed'
     redirect_to products_path
   end
   
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
+    flash[:notice] = 'Product deletion successful'
     redirect_to products_path
   end
   
